@@ -22,6 +22,8 @@ Widget caloriesCard(String title, String amount, String unit, IconData icon) {
             children: [
               Text(
                 title,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   color: AppColors.white,
