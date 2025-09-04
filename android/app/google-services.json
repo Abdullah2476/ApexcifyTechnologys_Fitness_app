@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "7451562963",
+    "project_id": "fit-track-2961f",
+    "storage_bucket": "fit-track-2961f.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:7451562963:android:ea47c61bbc89baeca35526",
+        "android_client_info": {
+          "package_name": "com.example.fit_track"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDG3iLGsUhYQJNOdrzZah5teTo1QzBbOGE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
