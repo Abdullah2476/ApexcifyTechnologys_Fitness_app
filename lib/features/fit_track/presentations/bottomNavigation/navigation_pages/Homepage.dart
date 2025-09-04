@@ -144,9 +144,13 @@ class Homepage extends ConsumerWidget {
                                   border: Border.all(color: AppColors.yelow),
                                 ),
                                 child: IconButton(
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    ref
+                                        .read(stepCountProvider.notifier)
+                                        .resetBaseline();
+                                  },
                                   icon: Icon(
-                                    Icons.pause,
+                                    Icons.refresh,
                                     color: AppColors.yelow,
                                     size: width * 0.05,
                                   ),

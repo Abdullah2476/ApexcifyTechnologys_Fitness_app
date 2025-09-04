@@ -10,6 +10,8 @@ class SimpleStepNotifier extends StateNotifier<int> {
   StreamSubscription<StepCount>? _subscription;
   bool hasError = false;
 
+  int _baseline = 0;
+
   SimpleStepNotifier() : super(0) {
     _startListening();
   }
@@ -18,12 +20,23 @@ class SimpleStepNotifier extends StateNotifier<int> {
     _subscription = Pedometer.stepCountStream.listen(
       (event) {
         hasError = false;
-        state = event.steps;
+
+        if (_baseline == 0) {
+          _baseline = event.steps;
+        }
+
+        state = event.steps - _baseline;
       },
       onError: (error) {
         hasError = true;
       },
     );
+  }
+
+  /// Reset baseline when a new user logs in
+  void resetBaseline() {
+    _baseline = 0;
+    state = 0;
   }
 
   @override

@@ -5,6 +5,7 @@ import 'package:fit_track/features/fit_track/presentations/auth/signup.dart';
 
 import 'package:fit_track/features/fit_track/providers/auth_provider/loginProvider.dart'
     as login;
+import 'package:fit_track/features/fit_track/providers/bottomnavigation_provider/steps_provider.dart';
 import 'package:fit_track/features/shared/appbar.dart';
 
 import 'package:fit_track/features/shared/mytextfield.dart';
@@ -137,6 +138,9 @@ class LoginPage extends ConsumerWidget {
                               );
 
                           if (success) {
+                            ref
+                                .read(stepCountProvider.notifier)
+                                .resetBaseline();
                             Navigator.push(
                               context,
                               MaterialPageRoute(

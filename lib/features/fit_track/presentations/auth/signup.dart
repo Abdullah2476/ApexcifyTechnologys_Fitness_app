@@ -8,6 +8,7 @@ import 'package:fit_track/features/fit_track/providers/auth_provider/loginProvid
     as login;
 import 'package:fit_track/features/fit_track/providers/auth_provider/signupprovider.dart'
     as signup;
+import 'package:fit_track/features/fit_track/providers/bottomnavigation_provider/steps_provider.dart';
 import 'package:fit_track/features/shared/appbar.dart';
 
 import 'package:fit_track/features/shared/mytextfield.dart';
@@ -153,6 +154,9 @@ class SignUpPage extends ConsumerWidget {
                                       );
 
                                   if (success) {
+                                    ref
+                                        .read(stepCountProvider.notifier)
+                                        .resetBaseline();
                                     Navigator.pushReplacement(
                                       context,
                                       MaterialPageRoute(
